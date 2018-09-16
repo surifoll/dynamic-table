@@ -1,0 +1,18 @@
+<div class="cal-md-6">
+  <div class="large-2 column"><label for="Search"> Search in below grid</label></div>
+  <div class="large-4 column "><input type="text" class="form-control" placeholder="Search" data-ng-model="searchText"></div>
+  <div class="clearfix"></div>
+  <button (click)="addColumn()">Add</button>
+</div>
+<table width="100%" class="table">
+  <thead>
+    <tr>
+      <th *ngFor="let header of (newColumnDef);let ind=index">{{header.name}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of newList">
+     <td *ngFor="let cell of row | appProperties">{{cell}}</td>
+      </tr>
+  </tbody>
+</table>
